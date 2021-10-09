@@ -919,3 +919,10 @@ a:focus {
   width: 45%;
   margin: auto;
 }
+
+.profile-img{
+  width:30%;
+  max-width:200px;
+  max-height:800px;
+  border-radius: 5px;
+}
