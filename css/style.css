@@ -914,3 +914,8 @@ a:focus {
   background: #04AA6D;
   cursor: pointer;
 }
+
+.center_info{
+  width: 45%;
+  margin: auto;
+}

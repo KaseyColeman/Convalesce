@@ -10,6 +10,8 @@ var output3 = document.getElementById("dumb3");
 var slider4 = document.getElementById("myRange4");
 var output4 = document.getElementById("dumb4");
 
+
+
 output1.innerHTML = slider1.value;
 output2.innerHTML = slider2.value;
 output3.innerHTML = slider3.value;
@@ -34,6 +36,24 @@ slider4.oninput = function() {
 }
 
 
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "World Wine Production 2018"
+    }
+  }
+});
 // to get current year
 function getYear() {
   var currentDate = new Date();
@@ -82,12 +102,8 @@ var modal = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
+  
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
-
-
-
-
-
