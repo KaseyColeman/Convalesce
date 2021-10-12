@@ -652,30 +652,6 @@ a:focus {
           box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.15);
 }
 
-.contact_section .map_container {
-  height: 315px;
-  border-radius: 25px;
-  overflow: hidden;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
-  padding: 0;
-}
-
-.contact_section .map_container .map {
-  height: 100%;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.contact_section .map_container .map #googleMap {
-  height: 100%;
-}
-
 /* client section start */
 .client_section .heading_container {
   margin-bottom: 30px;
@@ -874,7 +850,6 @@ a:focus {
 .footer-info p a {
   color: inherit;
 }
-/*# sourceMappingURL=style.css.map */
 
 /*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -925,4 +900,10 @@ a:focus {
   max-width:400px;
   max-height:800px;
   border-radius: 5px;
+}
+
+
+.column {
+  float: left;
+  width: 33.33%;
 }
