@@ -1,17 +1,35 @@
-const { MongoClient };
+const { Console } = require('console');
+const {MongoClient} = require('mongodb');
+
+async function listDatabases(client){
+    databasesList = await client.db().admin().listDatabases();
  
-// Replace the following with your Atlas connection string                                                                                                                                        
-const url = "mongodb+srv://KaseyColeman:KaseyColeman@convalesce.wql1e.mongodb.net/UserInfo?retryWrites=true&w=majority";
-const client = new MongoClient(url);
-async function run() {
+    console.log("Databases:");
+    databasesList.databases.forEach(db => console.log(` - ${db.name}`));
+};
+ 
+async function main() {
+	// we'll add code here soon
+    const uri = "mongodb+srv://KaseyColeman:KaseyColeman@Convalesce.wql1e.mongodb.net/UserInfo?retryWrites=true&w=majority";
+
+    const client = new MongoClient(uri);
+ 
     try {
+        // Connect to the MongoDB cluster
         await client.connect();
-        console.log("Connected correctly to server");
-    } catch (err) {
-        console.log(err.stack);
-    }
-    finally {
+ 
+        // Make the appropriate DB calls
+        await  listDatabases(client);
+        console.log("It is hitting this method");
+ 
+    } catch (e) {
+        console.error(e);
+    } finally {
         await client.close();
     }
 }
-run().catch(console.dir);
+
+main().catch(console.error);
+
+
+
