@@ -689,3 +689,21 @@ a:focus {
 .modal-content{
   width:50%;
 }
+
+.login-form{
+  background-color: #f7f7f8;
+  padding: 5%;
+  border-radius: 5px;
+
+}
+
+.text{
+  color: #0c0c0c;
+}
+
+.sign-form{
+  background-color: #f7f7f8;
+  padding: 1%;
+  border-radius: 5px;
+
+}
