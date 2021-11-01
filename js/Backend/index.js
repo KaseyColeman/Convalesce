@@ -1,38 +1,67 @@
-let currentData = null
+const Cuser = null
 
 
+function login() {
+    let currentData = null
+    const lname = document.getElementById("uname1").value;
+    const lpass = document.getElementById("psw1").value;
 
-const lname =  document.getElementById("uname1");
-const lpass = document.getElementById("psw1");
+    const data = {
+        "username": lname,
+        "password": lpass
+    };
 
-lname.onchange = function (){
-    console.log("wee");
-    console.log(lname.value);
-    console.log(currentData);
+    fetch('http://localhost:8080/user/log', {
+        method: 'POST', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            window.location.href = "http://127.0.0.1:5500/patient-dashboard.html";
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 }
 
-function login(){
+function createAccount() {
 
 
-    fetch('http://localhost:8080/health')
-    .then(response => response.json())
-    .then(data => currentData=data);
-    
-    console.log(lname.value);
-    console.log(lpass.value);
-    if(lname.value=="kcoleman@student.neumont.edu"){
-        window.location.href = "http://127.0.0.1:5500/patient-dashboard.html";
-    }else{
-        window.location.href = "http://127.0.0.1:5500/index.html";
-    }
-     
+    var username = document.getElementById("uname").value;
+    var password = document.getElementById("psw").value;
+    var name = document.getElementById("nam").value;
+    var email = document.getElementById("email").value;
+    var pronoun = document.getElementById("pronouns").value;
+
+    const data = {
+        "id": 0,
+        "name": name,
+        "username": username,
+        "password": password,
+        "email": email,
+        "authority": "CLIENT"
+    };
+
+    fetch('http://localhost:8080/user/c', {
+        method: 'POST', // or 'PUT'
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
+    window.location.href = "http://127.0.0.1:5500/patient-dashboard.html";
+
+
 }
-
-// function validate(){
-//     var username = document.getElementById("username").value;
-//     var password = document.getElementById("password").value;
-//     if ( username == "Formget" && password == "formget#123"){
-//     alert ("Login successfully");
-//    // Redirecting to other page.
-//     return false;
-//     }
