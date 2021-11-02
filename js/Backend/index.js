@@ -2,7 +2,6 @@ const Cuser = null
 
 
 function login() {
-    let currentData = null
     const lname = document.getElementById("uname1").value;
     const lpass = document.getElementById("psw1").value;
 
@@ -21,16 +20,17 @@ function login() {
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
+            window.sessionStorage.setItem('uid',data.id);
+            window.sessionStorage.setItem('username',lname);
+            window.sessionStorage.setItem('password',lpass);
             window.location.href = "http://127.0.0.1:5500/patient-dashboard.html";
         })
         .catch((error) => {
             console.error('Error:', error);
-        });
+        });   
 }
 
 function createAccount() {
-
-
     var username = document.getElementById("uname").value;
     var password = document.getElementById("psw").value;
     var name = document.getElementById("nam").value;
@@ -65,3 +65,4 @@ function createAccount() {
 
 
 }
+
