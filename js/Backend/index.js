@@ -10,7 +10,7 @@ function login() {
         "password": lpass
     };
 
-    fetch('http://localhost:8080/user/log', {
+    fetch('http://localhost:8080/g/log', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
@@ -23,7 +23,16 @@ function login() {
             window.sessionStorage.setItem('uid',data.id);
             window.sessionStorage.setItem('username',lname);
             window.sessionStorage.setItem('password',lpass);
-            window.location.href = "http://127.0.0.1:5500/patient-dashboard.html";
+            if(data.authority == "DOC"){
+                window.location.href = "http://127.0.0.1:5500/health-provider-dash.html";
+            }
+            else if (data.authority == "ADMIN"){
+                window.location.href = "http://127.0.0.1:5500/admin-dashboard.html";
+            }
+            else{
+                window.location.href = "http://127.0.0.1:5500/patient-dashboard.html";
+            }
+            
         })
         .catch((error) => {
             console.error('Error:', error);
@@ -64,5 +73,9 @@ function createAccount() {
     window.location.href = "http://127.0.0.1:5500/patient-dashboard.html";
 
 
+}
+
+function onLogout(){
+    window.sessionStorage.clear();
 }
 
