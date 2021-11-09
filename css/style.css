@@ -500,7 +500,7 @@ a:focus {
 /* ----------------------------------------------------------------------------------------------------footer section-----------------------------------------------------------------------------------------------------------*/
 .footer_section {
   background-color: #206a5d;
-  padding-top: 75px;
+  padding-top: 50px;
   text-align: center;
   color: #fff;
 }
@@ -519,101 +519,10 @@ a:focus {
   margin-bottom: 25px;
 }
 
-.footer_section .social-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 45px;
-}
-
-.footer_section .social-box .box {
-  background-color: #ffffff;
-  padding: 5px 15px;
-}
-
-.footer_section .social-box a {
-  margin: 0 5px;
-  color: #81b214;
-}
-
-.footer_section .social-box a i {
-  font-size: 18px;
-}
-
-.footer_section .social-box a:hover {
-  color: #206a5d;
-}
-
-.footer_items a {
-  position: relative;
-}
-
-.footer_items .item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: center;
-  margin-top: 25px;
-}
-
-.footer_items .item .img-box {
-  width: 60px;
-  height: 60px;
-  border-radius: 100%;
-  background-color: #ffffff;
-  background-repeat: no-repeat;
-  background-position: center;
-  text-align: center;
-  line-height: 65px;
-  background-color: #81b214;
-  border: 1px solid #81b214;
-  color: #ffffff;
-  -webkit-transition: all .3s;
-  transition: all .3s;
-}
-
-.footer_items .item .img-box i {
-  font-size: 24px;
-}
-
-.footer_items .item p {
-  margin-top: 15px;
-  color: #fff;
-  margin-bottom: 0;
-}
-
-.footer_items .item:hover .img-box {
-  background-color: transparent;
-  color: #81b214;
-}
-
-.footer-info {
-  text-align: center;
-  margin-top: 45px;
-}
-
-.footer-info p {
-  color: #ffffff;
-  margin: 0;
-  padding-bottom: 25px;
-}
-
-.footer-info p a {
-  color: inherit;
+.footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -706,4 +615,85 @@ a:focus {
   padding: 1%;
   border-radius: 5px;
 
+}
+
+
+
+[type="date"] {
+  background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+}
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+/* custom styles */
+
+.coc-block-row {
+    width: 100%;
+}
+
+.coc-block-label {
+  font-family: Verdana;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+  padding-bottom: 3px;
+  padding-right: 5px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+.coc-input {
+  font-family: Calibri;
+  height: 20px;
+  font-size: 12px;
+  padding-left: 3px;
+  padding-right: 3px;
+  border: 1px solid #999;
+  /* variations */
+}
+.coc-form {
+    padding-top: 5px;
+    padding-left: 8px;
+}
+
+.entry-text-box{
+  width: 100%;
+  padding-bottom: 4px;
+}
+
+.c-left{
+  float:left;
+  width: 30%;
+  margin-top: 5%;
+  
+}
+
+.c-right{
+  float:right;
+  width: 70%;
+}
+
+.mg-b{
+  margin-bottom: 100px;
+}
+
+
+.save-entry{
+  float: right;
+  width:70%;
+  margin-top: -5%;
+  padding: 10px;
+}
+
+.container-2{
+  width: 80%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+canvas{
+  padding: 10px;
 }

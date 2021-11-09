@@ -73,35 +73,100 @@
     </div>
 
     <section class="about_section layout_padding-bottom">
+        <div class="container">
+            <h1>Profile page</h1>
+            <div class="container">
+                <div class="main-body">
+                    <div class="row gutters-sm">
+                        <div class="col-md-4 mb-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex flex-column align-items-center text-center">
+                                        <img src="images/IMG_3494.jpg" alt="Admin" class="profile-img">
+                                        <div class="mt-3">
+                                            <h4 id="proName">John Doe</h4>
+                                            <p class="text-secondary mb-1" id="pronounsSpot">Full Stack Developer Messed
+                                                Up Oops</p>
+                                            <button onclick="onLogout()" class="btn btn-primary">Logout</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0">Full Name</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary" id="EditName">
 
-        <div class="container"><h1>This is a users Profile page</h1>
-            <a href="index.html" onclick="onLogout()">Logout</a>
-            <div class="row">
-                
-                <div class="img-box">
-                    <img src="images/IMG_3494.jpg" class="profile-img" />
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0">Email</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary" id="EditEmail">
+
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0">Username</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary" id="EditUsername">
+
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0">Age</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary" id="EditAge">
+
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <a class="btn btn-info">Edit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div>
-                <p>this is where some of personal infor will be
-                </p>
-            </div>
-
         </div>
     </section>
 
     <!-- footer section -->
-    <footer class="footer_section">
-        <div class="container">
+    <footer class="footer_section footer">
             <a href="" class="footer-brand"> Convalesce </a>
-
-        </div>
-        <div class="footer-info">
-            <div class="container">
-            </div>
-        </div>
     </footer>
     <!-- footer section -->
+    <script>
+        const load = () => {
+            fetch('http://localhost:8080/user/' + window.sessionStorage.getItem('uid'))
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("proName").innerHTML = data.name;
+                    document.getElementById("EditName").innerHTML = data.name;
+                    document.getElementById("EditEmail").innerHTML = data.email;
+                    document.getElementById("EditUsername").innerHTML = data.username;
+                    document.getElementById("EditAge").innerHTML = data.age;
+                    document.getElementById("pronounsSpot").innerHTML = data.pronouns[0];
+
+                });
+        }
+        window.onload = load;
+    </script>
     <!-- jQery -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <!-- popper js -->
@@ -114,6 +179,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <!-- custom js -->
     <script src="js/custom.js"></script>
+    <script src="js/Backend/index.js"></script>
 </body>
 
 </html>
