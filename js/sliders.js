@@ -51,7 +51,7 @@ function sliderSave() {
     "userId": window.sessionStorage.getItem('uid')
   };
 
-  fetch('http://localhost:8080/eslider/c', {
+  fetch('http://localhost:8082/eslider/c', {
     method: 'POST', // or 'PUT'
     headers: {
       'Content-Type': 'application/json',
