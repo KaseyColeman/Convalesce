@@ -85,9 +85,7 @@
           <p>11/06/2021 - This one was okay</p>
           <p>11/07/2021 - Fuck This Day</p>
         </div>
-
       </div>
-
 
       <div class=" c-right">
 
@@ -98,13 +96,13 @@
                 <div class="coc-block-row">
                   <label class="coc-block-label" for="dateofbirth">Journal Entry Date:</label>
                   <div class="coc-block">
-                    <input class="entry-text-title" type="date">
+                    <input class="entry-text-title" type="date" id="entryDate">
                   </div>
                 </div>
               </div>
 
-              <button class="save-entry">Save Entry</button>
-              <input type="text" name="entry-title" id="entry-title" class="entry-text-title"
+              <button onclick="SaveJournal()" class="save-entry">Save Entry</button>
+              <input type="text" name="entry-title" id="entryTitle" class="entry-text-title"
                 placeholder="Name of entry" />
               <textarea name="daily-entry" id="entry" class="entry-text-box" placeholder="What's on your mind today?"
                 rows="17"></textarea>

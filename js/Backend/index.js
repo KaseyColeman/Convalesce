@@ -21,8 +21,6 @@ function login() {
         .then(data => {
             console.log('Success:', data);
             window.sessionStorage.setItem('uid',data.id);
-            window.sessionStorage.setItem('username',lname);
-            window.sessionStorage.setItem('password',lpass);
             if(data.authority == "DOC"){
                 window.location.href = "http://127.0.0.1:5500/health-provider-dash.html";
             }
@@ -52,6 +50,7 @@ function createAccount() {
         "username": username,
         "password": password,
         "email": email,
+        "pronouns": pronoun,
         "authority": "CLIENT"
     };
 
@@ -71,8 +70,6 @@ function createAccount() {
         });
 
     window.location.href = "http://127.0.0.1:5500/patient-dashboard.html";
-
-
 }
 
 function onLogout(){
