@@ -697,3 +697,10 @@ a:focus {
 canvas{
   padding: 10px;
 }
+.slider-label-left{
+  float: left;
+}
+
+.slider-label-right{
+  float: right;
+}

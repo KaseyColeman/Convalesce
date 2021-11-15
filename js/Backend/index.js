@@ -30,7 +30,6 @@ function login() {
             else{
                 window.location.href = "http://127.0.0.1:5500/patient-dashboard.html";
             }
-            
         })
         .catch((error) => {
             console.error('Error:', error);
@@ -50,7 +49,7 @@ function createAccount() {
         "username": username,
         "password": password,
         "email": email,
-        "pronouns": pronoun,
+        "pronouns": [pronoun],
         "authority": "CLIENT"
     };
 
@@ -64,12 +63,14 @@ function createAccount() {
         .then(response => response.json())
         .then(data => {
             console.log('Success:', data);
+            window.sessionStorage.setItem('uid',data.id);
+            window.location.href = "http://127.0.0.1:5500/patient-dashboard.html";
         })
         .catch((error) => {
             console.error('Error:', error);
         });
 
-    window.location.href = "http://127.0.0.1:5500/patient-dashboard.html";
+    
 }
 
 function onLogout(){
