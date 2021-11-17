@@ -108,7 +108,7 @@ a:focus {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height:100%;
 }
 
 .hero_area .hero-bg img {
@@ -277,6 +277,7 @@ a:focus {
           align-items: center;
   position: relative;
   padding: 45px 0 75px 0;
+  height: 100%;
 }
 
 .slider_section .row {
@@ -528,7 +529,7 @@ a:focus {
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 .slidecontainer {
-  width: 75%;
+  width: 85%;
   margin: auto;
 }
 
@@ -536,7 +537,6 @@ a:focus {
   -webkit-appearance: none;
   width: 100%;
   height: 25px;
-  background: #8CC7A1;
   outline: none;
   opacity: 0.7;
   -webkit-transition: .2s;
@@ -552,10 +552,33 @@ a:focus {
   -webkit-appearance: none;
   appearance: none;
   width: 25px;
-  height: 25px;
-  background: #04AA6D;
+  height: 25px; 
   cursor: pointer;
+  background: black;
 }
+
+.background1{
+background: #488454;
+}
+
+.background2{
+  background: #85B36B;
+}
+
+.background3{
+  background: #A7C957;
+}
+
+.background4{
+  background: #A57548;
+}
+
+.background5{
+  background: #564138;
+}
+
+
+
 
 .slider::-moz-range-thumb {
   width: 25px;

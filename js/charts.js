@@ -1,7 +1,19 @@
-var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-var yValues = [55, 49, 44, 24, 15];
-var barColors = ["red", "green","blue","orange","brown"];
 
+//---------------------------------------------------------------------------------------------------------------------------------------------- CLIENT DASHBOARD - NUMBER OF JOURNALS
+var xValues = ["January", "Febuary", "March", "April", "May", "June", "July","August","September", "October","November","December"];
+var yValues = [1,2,3,4,5,6,7,8,9,10,11,12];
+var barColors = [
+  "#386641",
+  "#6A994E",
+  "#A7C957",
+  "#A57548",
+  "#564138","#386641",
+  "#6A994E",
+  "#A7C957",
+  "#A57548",
+  "#564138",
+  "#386641",
+  "#6A994E"];
 
 
 new Chart("myChart", {
@@ -14,40 +26,45 @@ new Chart("myChart", {
     }]
   },
   options: {
-    legend: {display: false},
+    legend: { display: false },
     title: {
       display: true,
-      text: "World Wine Production 2018"
+      text: "Number of Journals for Each Month"
     }
   }
 });
 
-
-var xValu = [10,20,30,40,50,60,70,80,90,100];
+//-------------------------------------------------------------------------------------------------------------------------------------------------------
+var xValu = ["Monday", "Tuesday", "Wedensday", "Thursday", "Friday", "Saturday", "Sunday"];
 
 new Chart("myChart2", {
   type: "line",
   data: {
     labels: xValu,
-    datasets: [{ 
-      data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
-      borderColor: "red",
+    datasets: [{
+      data: [86, 100, 16, 58, 70, 89, 90],
+      borderColor: "#386641",
       fill: false
-    }, { 
-      data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000],
-      borderColor: "green",
+    }, {
+      data: [25, 17, 37, 99, 31, 66,59],
+      borderColor: "#6A994E",
       fill: false
-    }, { 
-      data: [300,700,2000,5000,500,6000,2000,1000,200,100],
-      borderColor: "blue",
+    }, {
+      data: [30, 70, 20, 50, 79, 60, 20],
+      borderColor: "#A7C957",
+      fill: false
+    }, {
+      data: [10, 60, 50, 69,3, 40, 75],
+      borderColor: "#A57548",
       fill: false
     }]
   },
   options: {
-    legend: {display: false}
+    legend: { display: false }
   }
 });
 
+//---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 var xV = ["Italy", "France", "Spain", "USA", "Argentina"];
 var yV = [55, 49, 44, 24, 15];
@@ -77,8 +94,8 @@ new Chart("myChart3", {
 });
 
 
-var xVal = [50,60,70,80,90,100,110,120,130,140,150];
-var yVal = [7,8,8,9,9,9,10,11,14,14,15];
+var xVal = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
+var yVal = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
 
 new Chart("myChart4", {
   type: "line",
@@ -93,9 +110,9 @@ new Chart("myChart4", {
     }]
   },
   options: {
-    legend: {display: false},
+    legend: { display: false },
     scales: {
-      yAxes: [{ticks: {min: 6, max:16}}],
+      yAxes: [{ ticks: { min: 6, max: 16 } }],
     }
   }
 });

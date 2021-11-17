@@ -41,6 +41,7 @@ function createAccount() {
     var password = document.getElementById("psw").value;
     var name = document.getElementById("nam").value;
     var email = document.getElementById("email").value;
+    var birth = document.getElementById("birth").value;
     var pronoun = document.getElementById("pronouns").value;
 
     const data = {
@@ -49,6 +50,7 @@ function createAccount() {
         "username": username,
         "password": password,
         "email": email,
+        "age":birth,
         "pronouns": [pronoun],
         "authority": "CLIENT"
     };
