@@ -10,10 +10,11 @@ function login() {
         "password": lpass
     };
 
-    fetch('http://localhost:8080/g/log', {
+    fetch('http://localhost:9999/log', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
+            'Host':'convalesce.auth',
         },
         body: JSON.stringify(data),
     })
@@ -55,10 +56,11 @@ function createAccount() {
         "authority": "CLIENT"
     };
 
-    fetch('http://localhost:8080/user/c', {
+    fetch('http://localhost:9999/u', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
+            'Host':'convalesce.auth',
         },
         body: JSON.stringify(data),
     })

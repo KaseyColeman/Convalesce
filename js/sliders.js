@@ -24,10 +24,11 @@ function sliderSave() {
     "userId": window.sessionStorage.getItem('uid')
   };
 
-  fetch('http://localhost:8082/eslider/c', {
+  fetch('http://localhost:9999/s', {
     method: 'POST', // or 'PUT'
     headers: {
       'Content-Type': 'application/json',
+      'Host':'convalesce.auth',
     },
     body: JSON.stringify(data),
   })

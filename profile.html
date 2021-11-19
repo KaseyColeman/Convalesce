@@ -98,6 +98,15 @@
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-3">
+                                            <h6 class="mb-0">Username</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary" id="EditUsername">
+
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-3">
                                             <h6 class="mb-0">Full Name</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary" id="EditName">
@@ -114,15 +123,7 @@
                                         </div>
                                     </div>
                                     <hr>
-                                    <div class="row">
-                                        <div class="col-sm-3">
-                                            <h6 class="mb-0">Username</h6>
-                                        </div>
-                                        <div class="col-sm-9 text-secondary" id="EditUsername">
 
-                                        </div>
-                                    </div>
-                                    <hr>
                                     <div class="row">
                                         <div class="col-sm-3">
                                             <h6 class="mb-0">Birthday</h6>
@@ -133,8 +134,94 @@
                                     </div>
                                     <hr>
                                     <div class="row">
+                                        <div class="col-sm-3">
+                                            <h6 class="mb-0">Healthcare Worker</h6>
+                                        </div>
+                                        <div class="col-sm-9 text-secondary" id="EditWorker">
+
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row">
                                         <div class="col-sm-12">
-                                            <a class="btn btn-info">Edit</a>
+                                            <a id="myBtn2" class="btn btn-info">Edit</a>
+
+                                            <!-- Trigger/Open The Modal -->
+                                            <a id="myBtn" class="btn btn-info">Add Healthcare Worker</a>
+
+                                            <!-- The Modal -->
+                                            <div id="myModal" class="modal">
+
+                                                <!-- Modal content -->
+                                                <div class="modal-content">
+                                                    <div class="container padding-modal">
+                                                        <span class="close">&times;</span>
+                                                        <input type="text" placeholder="Enter Healthcare Worker ID"
+                                                            required />
+                                                        <a class="btn btn-info">Add Healthcare Worker</a>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="myModal2" class="modal">
+
+                                                <!-- Modal content -->
+                                                <div class="modal-content">
+                                                    <div class="container padding-modal">
+
+                                                        <div>
+                                                            <div class="card mb-3">
+                                                                <div class="card-body">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-3">
+                                                                            <h6 class="mb-0">Full Name</h6>
+                                                                        </div>
+                                                                        <input class="text-secondary edit-modal-input"
+                                                                            id="MName">
+
+                                                                        </input>
+                                                                    </div>
+                                                                    <hr>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-3">
+                                                                            <h6 class="mb-0">Email</h6>
+                                                                        </div>
+                                                                        <input class="edit-modal-input text-secondary"
+                                                                            id="MEmail">
+
+                                                                        </input>
+                                                                    </div>
+                                                                    <hr>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-3">
+                                                                            <h6 class="mb-0">Birthday</h6>
+                                                                        </div>
+                                                                        <input class="edit-modal-input text-secondary"
+                                                                            id="MAge">
+
+                                                                        </input>
+                                                                    </div>
+                                                                    <hr>
+                                                                    <div class="row">
+                                                                        <div class="col-sm-3">
+                                                                            <h6 class="mb-0">Healthcare Worker</h6>
+                                                                        </div>
+                                                                        <input class="edit-modal-input text-secondary"
+                                                                            id="MWorker">
+
+                                                                        </input>
+                                                                    </div>
+                                                                    <hr>
+                                                                    <a onclick="updateUser()" class="btn btn-info">Save
+                                                                        Edits</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -148,12 +235,17 @@
 
     <!-- footer section -->
     <footer class="footer_section footer">
-            <a href="" class="footer-brand"> Convalesce </a>
+        <a href="" class="footer-brand"> Convalesce </a>
     </footer>
     <!-- footer section -->
     <script>
         const load = () => {
-            fetch('http://localhost:8080/user/' + window.sessionStorage.getItem('uid'))
+            fetch('http://localhost:9999/u/' + window.sessionStorage.getItem('uid'), {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Host': 'convalesce.auth',
+                },
+            })
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById("proName").innerHTML = data.name;
@@ -162,12 +254,19 @@
                     document.getElementById("EditUsername").innerHTML = data.username;
                     document.getElementById("EditAge").innerHTML = data.age;
                     document.getElementById("pronounsSpot").innerHTML = data.pronouns[0];
+                    document.getElementById("EditWorker").innerHTML = data.doctor;
+
+                    document.getElementById("MName").value = data.name;
+                    document.getElementById("MEmail").value = data.email;
+                    document.getElementById("MAge").value = data.age;
+                    document.getElementById("MWorker").value = data.doctor;
 
                 });
         }
         window.onload = load;
     </script>
     <!-- jQery -->
+    <script src="/js/profile.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
     <!-- popper js -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"

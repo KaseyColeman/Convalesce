@@ -12,10 +12,11 @@ function SaveJournal() {
         "userId": userId
     };
 
-    fetch('http://localhost:8081/journal/c', {
+    fetch('http://localhost:9999/j', {
         method: 'POST', // or 'PUT'
         headers: {
             'Content-Type': 'application/json',
+            'Host':'convalesce.auth',
         },
         body: JSON.stringify(data),
     })
@@ -31,5 +32,4 @@ function SaveJournal() {
         document.getElementById("entryDate").value =null;
         document.getElementById("entryTitle").value = null;
         document.getElementById("entry").value = null;
-
 }

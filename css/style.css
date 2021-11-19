@@ -727,3 +727,11 @@ canvas{
 .slider-label-right{
   float: right;
 }
+
+.padding-modal{
+  padding: 10%;
+}
+
+.edit-modal-input{
+  width: 60%;
+}
