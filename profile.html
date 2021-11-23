@@ -40,7 +40,7 @@
         <header class="header_section">
             <div class="container">
                 <nav class="navbar navbar-expand-lg custom_nav-container">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" onclick="onLogout()">
                         <span> Convalesce </span>
                     </a>
 
@@ -240,12 +240,7 @@
     <!-- footer section -->
     <script>
         const load = () => {
-            fetch('http://localhost:9999/u/' + window.sessionStorage.getItem('uid'), {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Host': 'convalesce.auth',
-                },
-            })
+            fetch('http://localhost:9999/u/' + window.sessionStorage.getItem('uid'), )
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById("proName").innerHTML = data.name;
