@@ -42,7 +42,7 @@ function login() {
     request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     request.send(JSON.stringify(data));
     request.onload = () => {
-        //alert(request.responseText);
+        alert(request.responseText.id);
         setCookie("ID", request.responseText.id, 1);
         if (request.responseText.Authority == "DOC") {
             window.location.href = "http://127.0.0.1:5500/health-provider-dash.html";
