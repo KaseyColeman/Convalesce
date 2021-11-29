@@ -70,44 +70,65 @@
   </div>
 
   <section class="about_section layout_padding">
-      <h1>Patients </h1>
-      <ul>
-          <li>Ann Chovey</li>
-          <li>Frank Furter</li>
-          <li>Polly N. Satcherayted</li>
-          <li>Des E. Kaytedcoconut</li>
-          <li>Barry Cuda</li>
-          <li>Barry Mundy</li>
-          <li>John Dory</li>
-          <li>Murray Cod</li>
-          <li>Coral Trout</li>
-          <li>Red Salmon</li>
-          <li>Tiger Prawn</li>
-          <li>Rock Cod</li>
-          <li>Rock Lobster</li>
-          <li>Ray Manta</li>
-          <li>E.L. Moray</li>
-          <li>Hazel Nutt</li>
-          <li>Chris P. Bacon</li>
-          <li>Chris P. Creem</li>
-          <li>Marsha Mellow</li>
-          <li>Barb Akew</li>
-          <li>Pete Tsar</li>
-          <li>Marge Areen</li>
-          <li>Violet Crumb-Ball</li>
-          <li>Rosemary Lamb</li>
-          <li>Cesar Salad</li>
+      <h1>CLIENTS </h1>
+      <ul class="users-admin-list">
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Ann Chovey')">Ann Chovey</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Frank Furter')">Frank Furter</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Polly N. Satcherayted')">Polly N. Satcherayted</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Des E. Kaytedcoconut')">Des E. Kaytedcoconut</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Barry Cuda')">Barry Cuda</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Barry Mundy')">Barry Mundy</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('John Dory')">John Dory</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Murray Cod')">Murray Cod</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Coral Trout')">Coral Trout</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Red Salmon')">Red Salmon</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Tiger Prawn')">Tiger Prawn</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Rock Cod')">Rock Cod</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Rock Lobster')">Rock Lobster</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Ray Manta')">Ray Manta</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('E.L. Moray')">E.L. Moray</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Hazel Nutt')">Hazel Nutt</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Chris P. Bacon')">Chris P. Bacon</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Chris P. Creem')">Chris P. Creem</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Marsha Mellow')">Marsha Mellow</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Barb Akew')">Barb Akew</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Pete Tsar')">Pete Tsar</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Marge Areen')">Marge Areen</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Violet Crumb-Ball')">Violet Crumb-Ball</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Rosemary Lamb')">Rosemary Lamb</button></li>
+          <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Cesar Salad')">Cesar Salad</button></li>
       </ul>
 
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            </div>
+            <div class="modal-body">
+              <div class="btn btn-success">Active User</div>
+              <div>Last Active: within 24 hours </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
   </section>
 
   <!-- footer section -->
-  <footer class="footer_section footer">
+  <footer class="footer_section">
     <a href="" class="footer-brand"> Convalesce </a>
 </footer>
   <!-- footer section -->
   <!-- jQery -->
+  <script>
+    function onModal(title){
+      document.getElementById("exampleModalLabel").innerHTML = title;
+    }
+  </script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <!-- popper js -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -118,11 +139,8 @@
   <!-- owl slider -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <!-- custom js -->
-  <script src="js/custom.js"></script>
-  <!-- Google Map -->
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-  <!-- End Google Map -->
+  <script src="js/Backend/custom.js"></script>
+
 </body>
 
 </html>

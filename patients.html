@@ -70,42 +70,59 @@
   </div>
 
   <section class="about_section layout_padding">
-      <h1>Patients </h1>
-      <ul>
-          <li>Ann Chovey</li>
-          <li>Frank Furter</li>
-          <li>Polly N. Satcherayted</li>
-          <li>Des E. Kaytedcoconut</li>
-          <li>Barry Cuda</li>
-          <li>Barry Mundy</li>
-          <li>John Dory</li>
-          <li>Murray Cod</li>
-          <li>Coral Trout</li>
-          <li>Red Salmon</li>
-          <li>Tiger Prawn</li>
-          <li>Rock Cod</li>
-          <li>Rock Lobster</li>
-          <li>Ray Manta</li>
-          <li>E.L. Moray</li>
-          <li>Hazel Nutt</li>
-          <li>Chris P. Bacon</li>
-          <li>Chris P. Creem</li>
-          <li>Marsha Mellow</li>
-          <li>Barb Akew</li>
-          <li>Pete Tsar</li>
-          <li>Marge Areen</li>
-          <li>Violet Crumb-Ball</li>
-          <li>Rosemary Lamb</li>
-          <li>Cesar Salad</li>
-      </ul>
+    <h1>Patients</h1>
+    <ul class="users-admin-list">
+        <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Ann Chovey')">Ann Chovey</button></li>
+        <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Polly N. Satcherayted')">Polly N. Satcherayted</button></li>
+        <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Des E. Kaytedcoconut')">Des E. Kaytedcoconut</button></li>
+        <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Barry Cuda')">Barry Cuda</button></li>
+        <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Barry Mundy')">Barry Mundy</button></li>
+        <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Tiger Prawn')">Tiger Prawn</button></li>
+        <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Rock Cod')">Rock Cod</button></li>
+        <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Rock Lobster')">Rock Lobster</button></li>
+        <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Ray Manta')">Ray Manta</button></li>
+        <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('E.L. Moray')">E.L. Moray</button></li>
+        <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Hazel Nutt')">Hazel Nutt</button></li>
+        <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Chris P. Bacon')">Chris P. Bacon</button></li>
+        <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Chris P. Creem')">Chris P. Creem</button></li>
+        <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Marsha Mellow')">Marsha Mellow</button></li>
+        <li><button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('Barb Akew')">Barb Akew</button></li>
+    </ul>
 
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          </div>
+          <div class="modal-body">
+            <div class="btn btn-success">Active User</div>
+            <div class="btn btn-success">6 Slider Entires</div>
+            <div class="btn btn-danger">3 Journals Entered In the Last Week</div>
+            
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  </section>
+</section>
   <!-- footer section -->
   <footer class="footer_section footer">
     <a href="" class="footer-brand"> Convalesce </a>
 </footer>
   <!-- footer section -->
+
+
+  <script>
+    function onModal(title){
+      document.getElementById("exampleModalLabel").innerHTML = title;
+    }
+  </script>
+
+
   <!-- jQery -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <!-- popper js -->

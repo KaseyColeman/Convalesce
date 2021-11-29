@@ -71,21 +71,53 @@
     <!-- end header section -->
   </div>
 
-  <section class="about_section layout_padding">
-      <h1>Admin shit </h1>
+  <section class="about_section ">
+    <div class="container-2">
+      <h1>This is the Admin Dashboard</h1>
+      <div class="row mt-2">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header p-0 bg-transparent">
+              <div class="py-3">
+                <canvas id="myChart2"></canvas>
+              </div>
+            </div>
+            <div class="card-body">
+              <h6 class="mb-0 ">This is a chart that shows the data from the sliders page for everyday that you chart each week! When you chart data everyday the graph will change and show how the your sliders changed throughour the week!</h6>
+            </div>
+          </div>
+        </div>
 
-      <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
-      <canvas id="myChart2" style="width:100%;max-width:600px"></canvas>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header p-0  bg-transparent">
+              <div class="py-3">
+                <canvas id="myChart"></canvas>
+              </div>
+            </div>
+            <div class="card-body">
+              <h6 class="mb-0 "> This is a chart that shows the amount of journals that you have created for reach month. The more journals that you write the more the graph will change to reflect that!</h6>
+            </div>
+          </div>
+        </div>
 
-
+      </div>
+    </div>
   </section>
 
   <!-- footer section -->
   <footer class="footer_section footer">
     <a href="" class="footer-brand"> Convalesce </a>
 </footer>
+
+
+
+
+
+
+
   <!-- footer section --> 
-  <script src="js/charts.js"></script>
+  <script src="js/Backend/charts.js"></script>
   <!-- jQery -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <!-- popper js -->
@@ -97,12 +129,8 @@
   <!-- owl slider -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <!-- custom js -->
-  <script src="js/custom.js"></script>
- 
-  <!-- Google Map -->
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-  <!-- End Google Map -->
+  <script src="js/Backend/custom.js"></script>
+  <script src="js/Backend/index.js"></script>
 </body>
 
 </html>

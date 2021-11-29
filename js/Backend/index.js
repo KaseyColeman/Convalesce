@@ -40,10 +40,19 @@ function login() {
     var theUrl = "http://localhost:9999/log";
     request.open("POST", theUrl);
     request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    //request.setRequestHeader("Access-Control-Allow-Origin","http://127.0.0.1:5500");
     request.send(JSON.stringify(data));
     request.onload = () => {
-        alert(request.responseText.id);
+        alert(request.responseText)
         setCookie("ID", request.responseText.id, 1);
+
+        // var splitResponse = request.responseText.split( "" );
+        // var firstDropdownContent = splitResponse[0];
+        // var secondDropdownContent = splitResponse[1];
+
+        //alert(firstDropdownContent + " : "+secondDropdownContent);
+
+
         if (request.responseText.Authority == "DOC") {
             window.location.href = "http://127.0.0.1:5500/health-provider-dash.html";
         }
@@ -79,24 +88,22 @@ function createAccount() {
         "authority": "CLIENT"
     };
 
-    fetch('http://localhost:9999/u', {
-        method: 'POST', // or 'PUT'
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            //window.sessionStorage.setItem('uid',data.id);
-            setCookie("ID", "uid=" + "" + data.id, 1);
+    const request = new XMLHttpRequest();   // new HttpRequest instance 
+    var theUrl = "http://localhost:9999/u";
+    request.open("POST", theUrl);
+    request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    request.send(JSON.stringify(data));
+    request.onload = () => {
+        alert(request.responseText.id);
+        if(request.responseText == null){
+            alert("Username is Already Taken")
+        }else{
+            setCookie("ID", request.responseText.id, 1);
             window.location.href = "http://127.0.0.1:5500/patient-dashboard.html";
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-
+            
+        }
+        
+    }
 
 }
 
@@ -130,26 +137,39 @@ function SaveJournal() {
         "userId": userId
     };
 
-    fetch('http://localhost:9999/j', {
-        method: 'POST', // or 'PUT'
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            alert("Journal Is created Successfully");
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
 
-    document.getElementById("entryDate").value = null;
-    document.getElementById("entryTitle").value = null;
-    document.getElementById("entry").value = null;
+    const request = new XMLHttpRequest();   // new HttpRequest instance 
+    var theUrl = "http://localhost:9999/j";
+    request.open("POST", theUrl);
+    request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    request.send(JSON.stringify(data));
+    request.onload = () => {
+        alert("Journal Is created Successfully");
+
+        document.getElementById("entryDate").value = null;
+        document.getElementById("entryTitle").value = null;
+        document.getElementById("entry").value = null;
+    }
 }
+
+function getJournals(){
+    const request = new XMLHttpRequest();   // new HttpRequest instance 
+    var theUrl = "http://localhost:9999/jj"+getCookie(ID);
+    request.open("GET", theUrl);
+    request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    request.send(JSON.stringify(data));
+    request.onload = () => {
+        alert("Journals Fetched Correctly");
+
+        document.getElementById("entryDate").value = null;
+        document.getElementById("entryTitle").value = null;
+        document.getElementById("entry").value = null;
+    }
+}
+
+
+
+
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -159,7 +179,6 @@ function updateUser() {
     var age = document.getElementById("MAge").value;
     var health = document.getElementById("MWorker").value;
 
-
     const data = {
         "id": window.sessionStorage.getItem('uid'),
         "name": name,
@@ -168,23 +187,16 @@ function updateUser() {
         "doctorsId": health
     };
 
-    fetch('http://localhost:9999/u/' + getCookie("ID"), {
-        method: 'POST', // or 'PUT'
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-            window.location.href = "http://127.0.0.1:5500/profile.html"
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+    const request = new XMLHttpRequest();   // new HttpRequest instance 
+    var theUrl = "http://localhost:9999/u/" + getCookie("ID");
+    request.open("POST", theUrl);
+    request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    request.send(JSON.stringify(data));
+    request.onload = () => {
+        alert("Updated Successfully");
+        window.location.href = "http://127.0.0.1:5500/profile.html"
 
-
+    }
 }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -194,18 +206,14 @@ function updateUser() {
 
 function sliderSave() {
     var slider1 = document.getElementById("myRange1");
-
     var slider2 = document.getElementById("myRange2");
-
     var slider3 = document.getElementById("myRange3");
-
     var slider4 = document.getElementById("myRange4");
 
     var today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
     var yyyy = today.getFullYear();
-
     today = mm + '/' + dd + '/' + yyyy;
 
     const data = {
@@ -218,21 +226,15 @@ function sliderSave() {
         "userId": window.sessionStorage.getItem('uid')
     };
 
-    fetch('http://localhost:9999/s', {
-        method: 'POST', // or 'PUT'
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-    })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success:', data);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
-
+    const request = new XMLHttpRequest();   // new HttpRequest instance 
+    var theUrl = "http://localhost:9999/s";
+    request.open("POST", theUrl);
+    request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    request.send(JSON.stringify(data));
+    request.onload = () => {
+        alert("Updated Successfully");
+        window.location.href = "http://127.0.0.1:5500/chart.html"
+    }
 }
 
   //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

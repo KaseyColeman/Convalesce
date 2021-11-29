@@ -76,14 +76,25 @@
       <div class=" c-left">
         <div>
           <h2>Past Journals</h2>
-          <p>10/31/2021 - This Day</p>
-          <p>11/01/2021 - This Day</p>
-          <p>11/02/2021 - This Day</p>
-          <p>11/03/2021 - This Day</p>
-          <p>11/04/2021 - This Day</p>
-          <p>11/05/2021 - This Day</p>
-          <p>11/06/2021 - This one was okay</p>
-          <p>11/07/2021 - This Day</p>
+          <button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('10/30/2021')"
+            class="journal-button">10/30/2021</button>
+          <button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('10/31/2021')"
+            class="journal-button">10/31/2021</button>
+          <button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('11/01/2021')"
+            class="journal-button">11/01/2021</button>
+          <button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('11/02/2021')"
+            class="journal-button">11/02/2021</button>
+          <button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('11/03/2021')"
+            class="journal-button">11/03/2021</button>
+          <button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('11/04/2021')"
+            class="journal-button">11/04/2021</button>
+          <button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('11/05/2021')"
+            class="journal-button">11/05/2021</button>
+          <button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('11/06/2021')"
+            class="journal-button">11/06/2021</button>
+          <button type="button" data-toggle="modal" data-target="#exampleModal" onclick="onModal('11/07/2021')"
+            class="journal-button">11/07/2021</button>
+
         </div>
       </div>
 
@@ -101,17 +112,61 @@
                 </div>
               </div>
 
-              
+
               <input type="text" name="entry-title" id="entryTitle" class="entry-text-title"
                 placeholder="Name of entry" />
               <textarea name="daily-entry" id="entry" class="entry-text-box" placeholder="What's on your mind today?"
-                rows="17"></textarea><button onclick="SaveJournal()" >Save Entry</button>
+                rows="17"></textarea><button onclick="SaveJournal()">Save Entry</button>
             </div>
           </div>
         </div>
 
       </div>
     </div>
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+          </div>
+          <div class="modal-body">
+            <div> From childhood's hour I have not been
+              As others were -- I have not seen
+              As others saw -- I could not bring
+              My passions from a common spring --
+              From the same source I have not taken
+              My sorrow -- I could not awaken
+              My heart to joy at the same tone --
+              And all I lov'd -- I lov'd alone --
+              Then -- in my childhood -- in the dawn
+              Of a most stormy life -- was drawn
+              From ev'ry depth of good and ill
+              The mystery which binds me still --
+              From the torrent, or the fountain --
+              From the red cliff of the mountain --
+              From the sun that 'round me roll'd
+              In its autumn tint of gold --
+              From the lightning in the sky
+              As it pass'd me flying by --
+              From the thunder, and the storm --
+              And the cloud that took the form
+              (When the rest of Heaven was blue)
+              Of a demon in my view --
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </section>
 
   <!-- Journal Entry Results -->
@@ -121,7 +176,11 @@
     <a href="" class="footer-brand"> Convalesce </a>
   </footer>
   <!-- footer section -->
-
+  <script>
+    function onModal(title) {
+      document.getElementById("exampleModalLongTitle").innerHTML = title + " - Journal Title";
+    }
+  </script>
   <script src="js/Backend/custom.js"></script>
   <script src="js/Backend/index.js"></script>
 
@@ -139,4 +198,5 @@
 
 
 </body>
+
 </html>

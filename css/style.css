@@ -735,3 +735,22 @@ canvas{
 .edit-modal-input{
   width: 60%;
 }
+
+
+.users-admin-list{
+    -moz-column-count: 4;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 20px;
+    column-count: 3;
+    column-gap: 20px;
+    list-style-type: none;
+}
+
+.journal-button{
+  height: 30px;
+  width: 180px;
+  padding: 5px;
+  border-radius: 8px;
+  margin: 5px;
+}
