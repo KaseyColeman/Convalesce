@@ -31,38 +31,37 @@ function login() {
     const lname = document.getElementById("uname1").value;
     const lpass = document.getElementById("psw1").value;
 
-    const data = {
-        "username": lname,
-        "password": lpass
-    };
-
     const request = new XMLHttpRequest();   // new HttpRequest instance 
-    var theUrl = "http://localhost:9999/log";
+    var theUrl = "http://localhost:9999/log/"+lname+"/"+lpass;
     request.open("POST", theUrl);
-    request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    //request.setRequestHeader("Access-Control-Allow-Origin","http://127.0.0.1:5500");
-    request.send(JSON.stringify(data));
+    request.send();
     request.onload = () => {
-        alert(request.responseText)
-        setCookie("ID", request.responseText.id, 1);
 
-        // var splitResponse = request.responseText.split( "" );
-        // var firstDropdownContent = splitResponse[0];
-        // var secondDropdownContent = splitResponse[1];
+        var splitResponse = request.responseText.split( "," );
 
-        //alert(firstDropdownContent + " : "+secondDropdownContent);
+        var auth1 = splitResponse[9];
+        var auth2 = auth1.split(":");
+        var auth3 = auth2[1];
+        var auth4 = auth3.split("}");
+        var auth5 = auth4[0];
+        var auth6 = auth5.split('"');
+        var auth7 = auth6[1]
 
+        var secondDropdownContent = splitResponse[0]
+        var idd = secondDropdownContent.split(":");
+        var id = idd[1];
 
-        if (request.responseText.Authority == "DOC") {
+        setCookie("ID",id, 1);
+
+        if (auth7 == "DOC") {
             window.location.href = "http://127.0.0.1:5500/health-provider-dash.html";
         }
-        else if (request.responseText.Authority == "ADMIN") {
+        else if (auth7 == "ADMIN") {
             window.location.href = "http://127.0.0.1:5500/admin-dashboard.html";
         }
-        else if (request.responseText.Authority == "CLIENT") {
+        else if (auth7 == "CLIENT") {
             window.location.href = "http://127.0.0.1:5500/patient-dashboard.html";
         }
-
     }
 }
 
@@ -188,7 +187,7 @@ function updateUser() {
     };
 
     const request = new XMLHttpRequest();   // new HttpRequest instance 
-    var theUrl = "http://localhost:9999/u/" + getCookie("ID");
+    var theUrl = "http://localhost:9999/u/" + getCookie(ID);
     request.open("POST", theUrl);
     request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
     request.send(JSON.stringify(data));

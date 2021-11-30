@@ -4,6 +4,10 @@ body {
   color: #0c0c0c;
   background-color: #ffffff;
   overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .layout_padding {
@@ -366,33 +370,6 @@ a:focus {
 }
 
 .about_section .img-box img {
-  max-width: 100%;
-}
-
-.about_section .detail-box h3 {
-  font-weight: bold;
-}
-
-.about_section .detail-box p {
-  margin-top: 15px;
-}
-
-.about_section .detail-box a {
-  display: inline-block;
-  padding: 10px 45px;
-  background-color: #81b214;
-  color: #ffffff;
-  border-radius: 0px;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  border: none;
-  margin-top: 15px;
-}
-
-.about_section .detail-box a:hover {
-  -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
-  -webkit-box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.15);
           box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.15);
 }
 /* ------------------------------------------------------------------------------------------------------Why Section-------------------------------------------------------------------------------------------------------------*/
@@ -602,8 +579,8 @@ background: #488454;
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 .column {
-  float: left;
-  width: 33.33%;
+  columns: 3;
+  margin:20px;
 }
 
 .row{
@@ -691,18 +668,513 @@ background: #488454;
   float:left;
   width: 30%;
   margin-top: 5%;
+  padding: auto;
   
 }
 
 .c-right{
   float:right;
   width: 70%;
+  padding: auto;
 }
 
 .mg-b{
   margin-bottom: 100px;
 }
 
+@media all and (min-width:801px) and (max-width: 959px) {
+  /* put your css styles in here */
+  .c-left{
+    width: 100%;
+    margin-top: 5%;
+  }
+  
+  .c-right{
+    margin-top: 50px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .journal-button{
+    height: 30px;
+    width: 30px;
+    border-radius: 8px;
+  }
+
+  .journal-footer{
+    margin-top: 1150px;
+    margin-bottom: -700px;
+  }
+
+  .mobile-img-box{
+    width: 350px;
+    height:300px;
+  }
+
+  a:link, a:visited {
+
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+   .a-back{
+     background-color: #81b214;
+   }
+   .about_section {
+    margin-bottom: 15px;
+    width: 90%;
+  }
+
+  .why_section{
+    width: 95%;
+  }
+
+  .contact_section{
+    width: 90%;
+  }
+
+  .column {
+    columns: 1;
+    width:90%
+  }
+  .row{
+    padding-right: -10px;
+  }
+  .layout_padding{
+    width: 90%;
+  }
+
+  .bottom-footer{
+    margin-bottom: -100px;
+  }
+
+  .userdash{
+    margin-top: 100px;
+    padding:0px;
+  }
+
+  .bottom-space{
+    margin-bottom: 100px;
+  }
+
+  .margin-20{
+    margin-bottom: 20px;
+  }
+
+  body {
+    font-family: "Open Sans", sans-serif;
+    color: #0c0c0c;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 100px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+    
+}
+
+@media all and (min-width:769px) and (max-width: 800px) {
+  /* put your css styles in here */
+  .c-left{
+    width: 100%;
+    margin-top: 5%;
+  }
+  
+  .c-right{
+    margin-top: 50px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .journal-button{
+    height: 30px;
+    width: 30px;
+    border-radius: 8px;
+  }
+
+  .journal-footer{
+    margin-top: 1150px;
+    margin-bottom: -700px;
+  }
+
+  .mobile-img-box{
+    width: 350px;
+    height:300px;
+  }
+
+  a:link, a:visited {
+
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+   .a-back{
+     background-color: #81b214;
+   }
+   .about_section {
+    margin-bottom: 15px;
+    width: 90%;
+  }
+
+  .why_section{
+    width: 95%;
+  }
+
+  .contact_section{
+    width: 90%;
+  }
+
+  .column {
+    columns: 1;
+    width:90%
+  }
+  .row{
+    padding-right: -10px;
+  }
+  .layout_padding{
+    width: 90%;
+  }
+
+  .bottom-footer{
+    margin-bottom: -100px;
+  }
+
+  .userdash{
+    margin-top: 100px;
+    padding:0px;
+  }
+
+  .bottom-space{
+    margin-bottom: 100px;
+  }
+
+  .margin-20{
+    margin-bottom: 20px;
+  }
+
+  body {
+    font-family: "Open Sans", sans-serif;
+    color: #0c0c0c;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 100px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+}
+
+@media all and (min-width:569px) and (max-width: 768px) {
+  /* put your css styles in here */
+  .c-left{
+    width: 100%;
+    margin-top: 5%;
+  }
+  
+  .c-right{
+    margin-top: 50px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .journal-button{
+    height: 30px;
+    width: 30px;
+    border-radius: 8px;
+  }
+
+  .journal-footer{
+    margin-top: 1150px;
+    margin-bottom: -700px;
+  }
+
+  .mobile-img-box{
+    width: 350px;
+    height:300px;
+  }
+
+  a:link, a:visited {
+
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+   .a-back{
+     background-color: #81b214;
+   }
+   .about_section {
+    margin-bottom: 15px;
+    width: 90%;
+  }
+
+  .why_section{
+    width: 95%;
+  }
+
+  .contact_section{
+    width: 90%;
+  }
+
+  .column {
+    columns: 1;
+    width:90%
+  }
+  .row{
+    padding-right: -10px;
+  }
+  .layout_padding{
+    width: 90%;
+  }
+
+  .bottom-footer{
+    margin-bottom: -100px;
+  }
+
+  .userdash{
+    margin-top: 100px;
+    padding:0px;
+  }
+
+  .bottom-space{
+    margin-bottom: 100px;
+  }
+
+  .margin-20{
+    margin-bottom: 20px;
+  }
+
+  body {
+    font-family: "Open Sans", sans-serif;
+    color: #0c0c0c;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 100px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+}
+
+@media all and (min-width:481px) and (max-width: 568px) {
+  /* put your css styles in here */
+  .c-left{
+    width: 100%;
+    margin-top: 5%;
+  }
+  
+  .c-right{
+    margin-top: 50px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .journal-button{
+    height: 30px;
+    width: 30px;
+    border-radius: 8px;
+  }
+
+  .journal-footer{
+    margin-top: 1150px;
+    margin-bottom: -700px;
+  }
+
+  .mobile-img-box{
+    width: 350px;
+    height:300px;
+  }
+
+  a:link, a:visited {
+
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+   .a-back{
+     background-color: #81b214;
+   }
+   .about_section {
+    margin-bottom: 15px;
+    width: 90%;
+  }
+
+  .why_section{
+    width: 95%;
+  }
+
+  .contact_section{
+    width: 90%;
+  }
+
+  .column {
+    columns: 1;
+    width:90%
+  }
+  .row{
+    padding-right: -10px;
+  }
+  .layout_padding{
+    width: 90%;
+  }
+
+  .bottom-footer{
+    margin-bottom: -100px;
+  }
+
+  .userdash{
+    margin-top: 100px;
+    padding:0px;
+  }
+
+  .bottom-space{
+    margin-bottom: 100px;
+  }
+
+  .margin-20{
+    margin-bottom: 20px;
+  }
+
+  body {
+    font-family: "Open Sans", sans-serif;
+    color: #0c0c0c;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 100px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+
+
+  /* put your css styles in here */
+  .c-left{
+    width: 100%;
+    margin-top: 5%;
+  }
+  
+  .c-right{
+    margin-top: 50px;
+    width: 100%;
+    margin-bottom: 50px;
+  }
+
+  .journal-button{
+    height: 30px;
+    width: 30px;
+    border-radius: 8px;
+  }
+
+  .journal-footer{
+    margin-top: 1150px;
+    margin-bottom: -700px;
+  }
+
+  .mobile-img-box{
+    width: 350px;
+    height:300px;
+  }
+
+  a:link, a:visited {
+
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+   .a-back{
+     background-color: #81b214;
+   }
+   .about_section {
+    margin-bottom: 15px;
+    width: 90%;
+  }
+
+  .why_section{
+    width: 95%;
+  }
+
+  .contact_section{
+    width: 90%;
+  }
+
+  .column {
+    columns: 1;
+    width:90%
+  }
+  .row{
+    padding-right: -10px;
+  }
+  .layout_padding{
+    width: 90%;
+  }
+
+  .bottom-footer{
+    margin-bottom: -100px;
+  }
+
+  .userdash{
+    margin-top: 100px;
+    padding:0px;
+  }
+
+  .bottom-space{
+    margin-bottom: 100px;
+  }
+
+  .margin-20{
+    margin-bottom: 20px;
+  }
+
+  body {
+    font-family: "Open Sans", sans-serif;
+    color: #0c0c0c;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 100px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+}
+.bottom-footer{
+  margin-bottom: -100px;
+}
+
+a:link, a:visited {
+
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+ .a-back{
+   background-color: #81b214;
+ }
+.mobile-img-box{
+  width: 350px;
+    height:300px;
+}
 
 .save-entry{
   float: right;
@@ -749,8 +1221,27 @@ canvas{
 
 .journal-button{
   height: 30px;
-  width: 180px;
+  width: 200px;
   padding: 5px;
   border-radius: 8px;
   margin: 5px;
+}
+
+.login-foot{
+  padding-bottom: -50px;;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #81b214;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }

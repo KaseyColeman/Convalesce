@@ -40,7 +40,7 @@
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container">
-          <a class="navbar-brand" onclick="onLogout()">
+          <a class="navbar-brand">
             <span> Convalesce </span>
           </a>
 
@@ -55,7 +55,7 @@
                 <a class="nav-link" href="patient-dashboard.html">Dashboard</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="charts.html">Chart</a>
+                <a class="nav-link" href="charts.html">Sliders</a>
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="journal.html">Journal</a>
@@ -99,7 +99,6 @@
       </div>
 
       <div class=" c-right">
-
         <div id="entryForm" action="">
           <div class="container-row container-row-journal">
             <div class="container-item container-item-journal">
@@ -111,8 +110,6 @@
                   </div>
                 </div>
               </div>
-
-
               <input type="text" name="entry-title" id="entryTitle" class="entry-text-title"
                 placeholder="Name of entry" />
               <textarea name="daily-entry" id="entry" class="entry-text-box" placeholder="What's on your mind today?"
@@ -120,59 +117,54 @@
             </div>
           </div>
         </div>
-
       </div>
+
     </div>
+  </section>
 
-
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true">
-      <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        </div>
+        <div class="modal-body">
+          <div> From childhood's hour I have not been
+            As others were -- I have not seen
+            As others saw -- I could not bring
+            My passions from a common spring --
+            From the same source I have not taken
+            My sorrow -- I could not awaken
+            My heart to joy at the same tone --
+            And all I lov'd -- I lov'd alone --
+            Then -- in my childhood -- in the dawn
+            Of a most stormy life -- was drawn
+            From ev'ry depth of good and ill
+            The mystery which binds me still --
+            From the torrent, or the fountain --
+            From the red cliff of the mountain --
+            From the sun that 'round me roll'd
+            In its autumn tint of gold --
+            From the lightning in the sky
+            As it pass'd me flying by --
+            From the thunder, and the storm --
+            And the cloud that took the form
+            (When the rest of Heaven was blue)
+            Of a demon in my view --
           </div>
-          <div class="modal-body">
-            <div> From childhood's hour I have not been
-              As others were -- I have not seen
-              As others saw -- I could not bring
-              My passions from a common spring --
-              From the same source I have not taken
-              My sorrow -- I could not awaken
-              My heart to joy at the same tone --
-              And all I lov'd -- I lov'd alone --
-              Then -- in my childhood -- in the dawn
-              Of a most stormy life -- was drawn
-              From ev'ry depth of good and ill
-              The mystery which binds me still --
-              From the torrent, or the fountain --
-              From the red cliff of the mountain --
-              From the sun that 'round me roll'd
-              In its autumn tint of gold --
-              From the lightning in the sky
-              As it pass'd me flying by --
-              From the thunder, and the storm --
-              And the cloud that took the form
-              (When the rest of Heaven was blue)
-              Of a demon in my view --
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
 
-          </div>
         </div>
       </div>
     </div>
-
-
-  </section>
-
+  </div>
   <!-- Journal Entry Results -->
 
   <!-- footer section -->
-  <footer class="footer_section footer">
+  <footer class="footer_section footer journal-footer userdash">
     <a href="" class="footer-brand"> Convalesce </a>
   </footer>
   <!-- footer section -->
@@ -181,7 +173,7 @@
       document.getElementById("exampleModalLongTitle").innerHTML = title + " - Journal Title";
     }
   </script>
-  <script src="js/Backend/custom.js"></script>
+  <script src="js/Backend/custom.js"></script> 
   <script src="js/Backend/index.js"></script>
 
   <!-- jQery -->
