@@ -135,7 +135,7 @@
                                     <hr>
                                     <div class="row">
                                         <div class="col-sm-3">
-                                            <h6 class="mb-0">Healthcare Worker</h6>
+                                            <h6 class="mb-0">Healthcare Worker ID</h6>
                                         </div>
                                         <div class="col-sm-9 text-secondary" id="EditWorker">
 
@@ -249,14 +249,16 @@ function getCookie(cname) {
                     document.getElementById("EditUsername").innerHTML = data.username;
                     document.getElementById("EditAge").innerHTML = data.age;
                     document.getElementById("pronounsSpot").innerHTML = data.pronouns[0];
-                    document.getElementById("EditWorker").innerHTML = data.doctor;
+                    document.getElementById("EditWorker").innerHTML = data.doctor.publicID;
 
                     document.getElementById("MName").value = data.name;
                     document.getElementById("MEmail").value = data.email;
                     document.getElementById("MAge").value = data.age;
-                    document.getElementById("MWorker").value = data.doctor;
+                    document.getElementById("MWorker").value = data.doctor.publicID;
 
                 });
+
+
         }
         window.onload = load;
     </script>

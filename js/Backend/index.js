@@ -39,7 +39,7 @@ function login() {
 
         var splitResponse = request.responseText.split( "," );
 
-        var auth1 = splitResponse[9];
+        var auth1 = splitResponse[21];
         var auth2 = auth1.split(":");
         var auth3 = auth2[1];
         var auth4 = auth3.split("}");
@@ -47,6 +47,7 @@ function login() {
         var auth6 = auth5.split('"');
         var auth7 = auth6[1]
 
+        alert(auth7)
         var secondDropdownContent = splitResponse[0]
         var idd = secondDropdownContent.split(":");
         var id = idd[1];
@@ -156,7 +157,6 @@ function getJournals(){
     var theUrl = "http://localhost:9999/jj"+getCookie(ID);
     request.open("GET", theUrl);
     request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    request.send(JSON.stringify(data));
     request.onload = () => {
         alert("Journals Fetched Correctly");
 
@@ -178,19 +178,10 @@ function updateUser() {
     var age = document.getElementById("MAge").value;
     var health = document.getElementById("MWorker").value;
 
-    const data = {
-        "id": window.sessionStorage.getItem('uid'),
-        "name": name,
-        "email": email,
-        "age": age,
-        "doctorsId": health
-    };
-
     const request = new XMLHttpRequest();   // new HttpRequest instance 
-    var theUrl = "http://localhost:9999/u/" + getCookie(ID);
+    var theUrl = "http://localhost:9999/update/" + getCookie("ID")+"/"+name+"/"+email+"/"+age+"/"+health;
     request.open("POST", theUrl);
     request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-    request.send(JSON.stringify(data));
     request.onload = () => {
         alert("Updated Successfully");
         window.location.href = "http://127.0.0.1:5500/profile.html"
