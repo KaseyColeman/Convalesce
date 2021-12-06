@@ -46,8 +46,7 @@ function login() {
         var auth5 = auth4[0];
         var auth6 = auth5.split('"');
         var auth7 = auth6[1]
-
-        alert(auth7)
+        
         var secondDropdownContent = splitResponse[0]
         var idd = secondDropdownContent.split(":");
         var id = idd[1];

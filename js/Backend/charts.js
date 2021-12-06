@@ -1,13 +1,13 @@
 
 //---------------------------------------------------------------------------------------------------------------------------------------------- CLIENT DASHBOARD - NUMBER OF JOURNALS
-var xValues = ["January", "Febuary", "March", "April", "May", "June", "July","August","September", "October","November","December"];
-var yValues = [1,2,3,4,5,6,7,8,9,10,11,12];
+var xValues = ["January", "Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+var yValues = [20, 16, 17, 12, 13, 7, 26, 14, 12, 22, 30, 4];
 var barColors = [
   "#386641",
   "#6A994E",
   "#A7C957",
   "#A57548",
-  "#564138","#386641",
+  "#564138", "#386641",
   "#6A994E",
   "#A7C957",
   "#A57548",
@@ -42,25 +42,31 @@ new Chart("myChart2", {
   data: {
     labels: xValu,
     datasets: [{
-      data: [86, 100, 16, 58, 70, 89, 90],
+      label: 'Happy-Sad',
+      data: [86, 80, 76, 58, 70, 89, 90],
       borderColor: "#386641",
       fill: false
     }, {
-      data: [25, 17, 37, 99, 31, 66,59],
+      label: 'Relaxed-Stressed',
+      data: [40, 47, 55, 80, 40, 70, 59],
       borderColor: "#6A994E",
       fill: false
     }, {
-      data: [30, 70, 20, 50, 79, 60, 20],
+      label: 'Calm-Anxious',
+      data: [30, 40, 45, 50, 30, 60, 20],
       borderColor: "#A7C957",
       fill: false
     }, {
-      data: [10, 60, 50, 69,3, 40, 75],
+      label: 'Content-Displeased',
+      data: [10, 20, 25, 40, 50, 40, 35],
       borderColor: "#A57548",
       fill: false
     }]
   },
   options: {
-    legend: { display: false }
+    legend: {
+      display: true,
+    },
   }
 });
 

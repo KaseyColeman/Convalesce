@@ -99,9 +99,25 @@
         <div class="slider-label-right"><strong>Displeased</strong></div>
         <input type="range" min="1" max="100" value="50" class="slider background4" id="myRange4">   
       </div>
-      <button onclick="sliderSave()">Save</button>
+      <button onclick="sliderSave()" data-toggle="modal" data-target="#exampleModal1">Save</button>
     </div>
   </section>
+
+  <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+
+        </div>
+        <div class="modal-body">
+          <h5>Slider data saved Sucessfully </h5>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- footer section -->
   <footer class="footer_section footer userdash">
