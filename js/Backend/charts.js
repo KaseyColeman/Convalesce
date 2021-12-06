@@ -72,53 +72,28 @@ new Chart("myChart2", {
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-var xV = ["Italy", "France", "Spain", "USA", "Argentina"];
-var yV = [55, 49, 44, 24, 15];
-var barC = [
-  "#b91d47",
-  "#00aba9",
-  "#2b5797",
-  "#e8c3b9",
-  "#1e7145"
-];
-
-new Chart("myChart3", {
-  type: "pie",
+new Chart(document.getElementById("bar-chart-horizontal"), {
+  type: 'horizontalBar',
   data: {
-    labels: xV,
-    datasets: [{
-      backgroundColor: barC,
-      data: yV
-    }]
-  },
-  options: {
-    title: {
-      display: true,
-      text: "World Wide Wine Production 2018"
-    }
-  }
-});
-
-
-var xVal = [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150];
-var yVal = [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15];
-
-new Chart("myChart4", {
-  type: "line",
-  data: {
-    labels: xVal,
-    datasets: [{
-      fill: false,
-      lineTension: 0,
-      backgroundColor: "rgba(0,0,255,1.0)",
-      borderColor: "rgba(0,0,255,0.1)",
-      data: yVal
-    }]
+    labels: ["Users", "Active Users", "Journalng Users", "Slider Users", "Incacive Users"],
+    datasets: [
+      {
+        label: "Population (millions)",
+        backgroundColor: [      "#386641",
+        "#6A994E",
+        "#A7C957",
+        "#A57548",
+        "#386641"
+      ],
+        data: [200,175,100,130,25]
+      }
+    ]
   },
   options: {
     legend: { display: false },
-    scales: {
-      yAxes: [{ ticks: { min: 6, max: 16 } }],
+    title: {
+      display: true,
+      text: 'User Activity'
     }
   }
 });

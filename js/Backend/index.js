@@ -46,7 +46,7 @@ function login() {
         var auth5 = auth4[0];
         var auth6 = auth5.split('"');
         var auth7 = auth6[1]
-        
+
         var secondDropdownContent = splitResponse[0]
         var idd = secondDropdownContent.split(":");
         var id = idd[1];
@@ -118,6 +118,15 @@ function destroy() {
     window.location.href = "http://127.0.0.1:5500/login.html";
     document.cookie = "ID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 }
+
+function adminShortcut(){
+    setCookie("ID",5,1);
+}
+
+function doctorShortcut(){
+    setCookie("ID",6,1);
+}
+
 
 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
